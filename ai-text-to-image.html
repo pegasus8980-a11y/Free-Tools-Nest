@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Text to Image Generator – Free Online | ToolNest</title>
+<meta name="description" content="Generate AI images from text free online. Type any description and create stunning AI art instantly. No signup, no credits, unlimited use.">
+<meta name="keywords" content="ai text to image, text to image generator free, ai image generator, ai art generator, free ai image maker, generate image from text, ai picture generator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pegasus8980-a11y.github.io/Toolnest/ai-text-to-image.html">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#060608; --surface:#0f0f14; --card:#161620; --card2:#1c1c28;
+  --accent:#ff5f7e; --accent2:#7c6aff; --accent3:#00e5a0; --accent4:#ffb830;
+  --text:#f2f2ff; --muted:#7878a0; --border:rgba(255,95,126,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; }
+body::before { content:''; position:fixed; inset:0; background:radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255,95,126,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(124,106,255,0.05) 0%,transparent 60%); pointer-events:none; z-index:0; }
+nav { position:sticky; top:0; z-index:200; background:rgba(6,6,8,0.9); backdrop-filter:blur(24px); border-bottom:1px solid var(--border); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--text); text-decoration:none; display:flex; align-items:center; gap:9px; }
+.logo-mark { width:32px; height:32px; background:linear-gradient(135deg,var(--accent2),var(--accent)); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:15px; }
+.logo span { color:var(--accent2); }
+.back-btn { background:var(--card); border:1px solid var(--border); color:var(--muted); padding:7px 15px; border-radius:8px; text-decoration:none; font-size:0.83rem; transition:all 0.2s; }
+.back-btn:hover { color:var(--text); border-color:var(--accent); }
+main { position:relative; z-index:1; max-width:800px; margin:0 auto; padding:50px 20px 80px; }
+.page-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,95,126,0.1); border:1px solid rgba(255,95,126,0.3); color:var(--accent); font-size:0.72rem; font-weight:700; padding:5px 14px; border-radius:100px; margin-bottom:18px; letter-spacing:0.07em; text-transform:uppercase; }
+h1 { font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:12px; line-height:1.1; }
+h1 em { font-style:normal; background:linear-gradient(90deg,var(--accent),var(--accent4)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.page-desc { color:var(--muted); font-size:0.93rem; line-height:1.75; margin-bottom:36px; }
+
+.tool-box { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:30px; margin-bottom:28px; }
+
+.prompt-area {
+  width:100%; background:var(--surface); border:1px solid rgba(255,95,126,0.2);
+  border-radius:12px; padding:16px; color:var(--text); font-family:'DM Sans',sans-serif;
+  font-size:0.95rem; resize:vertical; min-height:100px; outline:none; transition:border-color 0.2s;
+  line-height:1.6;
+}
+.prompt-area:focus { border-color:var(--accent); }
+.prompt-area::placeholder { color:var(--muted); }
+
+.prompt-examples { margin:12px 0; }
+.example-label { font-size:0.75rem; color:var(--muted); margin-bottom:8px; }
+.examples-row { display:flex; flex-wrap:wrap; gap:6px; }
+.example-chip {
+  background:var(--surface); border:1px solid rgba(255,95,126,0.15);
+  color:var(--muted); font-size:0.75rem; padding:4px 12px;
+  border-radius:100px; cursor:pointer; transition:all 0.2s;
+}
+.example-chip:hover { border-color:var(--accent); color:var(--accent); }
+
+.options-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+.option-group label { font-size:0.78rem; color:var(--muted); margin-bottom:6px; display:block; }
+.option-select { width:100%; background:var(--surface); border:1px solid rgba(255,95,126,0.15); border-radius:8px; padding:9px 12px; color:var(--text); font-size:0.87rem; outline:none; }
+
+.generate-btn { width:100%; padding:15px; background:linear-gradient(90deg,var(--accent),var(--accent4)); border:none; border-radius:12px; color:#fff; font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity 0.2s; margin-top:4px; }
+.generate-btn:hover { opacity:0.88; }
+.generate-btn:disabled { opacity:0.4; cursor:not-allowed; }
+
+.result-area { display:none; margin-top:24px; }
+.result-label { font-size:0.78rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+.result-img-wrap { position:relative; border-radius:14px; overflow:hidden; background:var(--surface); min-height:200px; display:flex; align-items:center; justify-content:center; }
+.result-img { width:100%; display:block; border-radius:14px; }
+.loading-overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:var(--surface); border-radius:14px; }
+.spinner { width:44px; height:44px; border:3px solid rgba(255,95,126,0.2); border-top-color:var(--accent); border-radius:50%; animation:spin 0.9s linear infinite; }
+.loading-text { font-size:0.88rem; color:var(--muted); }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.result-actions { display:flex; gap:10px; margin-top:12px; }
+.btn-download { flex:1; padding:12px; background:linear-gradient(90deg,var(--accent3),#00b4d8); border:none; border-radius:10px; color:#060608; font-family:'Syne',sans-serif; font-size:0.9rem; font-weight:700; cursor:pointer; }
+.btn-new { flex:1; padding:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:0.9rem; cursor:pointer; transition:all 0.2s; }
+.btn-new:hover { border-color:var(--accent); }
+
+.gallery { margin-top:24px; }
+.gallery-label { font-size:0.8rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.gallery-item { border-radius:10px; overflow:hidden; cursor:pointer; aspect-ratio:1; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s; }
+.gallery-item:hover img { transform:scale(1.05); }
+
+.ad-box { background:var(--surface); border:1px dashed rgba(255,95,126,0.15); border-radius:12px; padding:14px; text-align:center; color:var(--muted); font-size:0.72rem; margin:20px 0; }
+.ad-label { text-transform:uppercase; letter-spacing:0.1em; opacity:0.4; margin-bottom:5px; font-size:0.65rem; }
+.info-section h2 { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:700; margin-bottom:10px; }
+.info-section p { font-size:0.88rem; color:var(--muted); line-height:1.75; margin-bottom:14px; }
+footer { background:var(--surface); border-top:1px solid var(--border); padding:28px 5%; text-align:center; color:var(--muted); font-size:0.8rem; position:relative; z-index:1; }
+.footer-logo { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; color:var(--text); margin-bottom:8px; }
+.footer-logo span { color:var(--accent2); }
+.footer-links { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin:10px 0; }
+.footer-links a { color:var(--muted); text-decoration:none; font-size:0.8rem; }
+.footer-links a:hover { color:var(--accent); }
+@media(max-width:500px) { .options-row { grid-template-columns:1fr; } .gallery-grid { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"><div class="logo-mark">🛠</div>Tool<span>Nest</span></a>
+  <a class="back-btn" href="index.html">← All Tools</a>
+</nav>
+
+<main>
+  <span class="page-badge">🎨 AI Powered</span>
+  <h1><em>AI Text to Image</em><br>Generator Free</h1>
+  <p class="page-desc">Type any description and generate stunning AI images instantly. Create art, wallpapers, logos, backgrounds — completely free, no signup, unlimited generations.</p>
+
+  <div class="ad-box">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="tool-box">
+    <textarea class="prompt-area" id="promptInput" placeholder="Describe the image you want to create...
+Example: A beautiful sunset over mountains with purple sky, photorealistic, 4K quality"></textarea>
+
+    <div class="prompt-examples">
+      <div class="example-label">💡 Try these prompts:</div>
+      <div class="examples-row">
+        <span class="example-chip">Sunset over mountains</span>
+        <span class="example-chip">Cute cartoon cat</span>
+        <span class="example-chip">Futuristic city at night</span>
+        <span class="example-chip">Beautiful flowers garden</span>
+        <span class="example-chip">Abstract colorful art</span>
+        <span class="example-chip">Professional logo design</span>
+        <span class="example-chip">Fantasy dragon</span>
+        <span class="example-chip">Ocean waves beach</span>
+      </div>
+    </div>
+
+    <div class="options-row">
+      <div class="option-group">
+        <label>Image Style</label>
+        <select class="option-select" id="styleSelect">
+          <option value="">Realistic</option>
+          <option value="digital art">Digital Art</option>
+          <option value="oil painting">Oil Painting</option>
+          <option value="watercolor">Watercolor</option>
+          <option value="anime style">Anime</option>
+          <option value="cartoon">Cartoon</option>
+          <option value="sketch pencil drawing">Pencil Sketch</option>
+          <option value="3d render">3D Render</option>
+          <option value="minimalist">Minimalist</option>
+        </select>
+      </div>
+      <div class="option-group">
+        <label>Image Size</label>
+        <select class="option-select" id="sizeSelect">
+          <option value="512x512">Square (512×512)</option>
+          <option value="768x512">Landscape (768×512)</option>
+          <option value="512x768">Portrait (512×768)</option>
+          <option value="1024x576">Wide HD (1024×576)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="generate-btn" id="generateBtn">🎨 Generate AI Image</button>
+
+    <div class="result-area" id="resultArea">
+      <div class="result-label">Generated Image</div>
+      <div class="result-img-wrap" id="resultWrap">
+        <div class="loading-overlay" id="loadingOverlay">
+          <div class="spinner"></div>
+          <div class="loading-text">AI is creating your image...</div>
+        </div>
+        <img class="result-img" id="resultImg" style="display:none;" alt="AI Generated Image">
+      </div>
+      <div class="result-actions">
+        <button class="btn-download" id="downloadBtn">⬇️ Download Image</button>
+        <button class="btn-new" id="newBtn">🔄 Generate Another</button>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallerySection" style="display:none;">
+      <div class="gallery-label">Recent Generations</div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </div>
+
+  <div class="ad-box">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="info-section">
+    <h2>How to Generate AI Images Free</h2>
+    <p>Type any description in the text box — the more detailed, the better. Choose a style and size, then click Generate. Our AI creates your image in seconds completely free with no limits.</p>
+    <p>You can generate unlimited images — portraits, landscapes, abstract art, logos, backgrounds, anything you can imagine. Download in high quality with one click.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">Tool<span>Nest</span></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="ai-photo-enhancer.html">AI Photo Enhancer</a>
+    <a href="image-resizer.html">Image Resizer</a>
+    <a href="jpg-to-pdf.html">JPG to PDF</a>
+  </div>
+  <p style="font-size:0.72rem;opacity:0.4;margin-top:8px;">© 2025 ToolNest · Free AI Image Generator</p>
+</footer>
+
+<script>
+const promptInput = document.getElementById('promptInput');
+const generateBtn = document.getElementById('generateBtn');
+const resultArea = document.getElementById('resultArea');
+const resultWrap = document.getElementById('resultWrap');
+const loadingOverlay = document.getElementById('loadingOverlay');
+const resultImg = document.getElementById('resultImg');
+const downloadBtn = document.getElementById('downloadBtn');
+const newBtn = document.getElementById('newBtn');
+const galleryGrid = document.getElementById('galleryGrid');
+const gallerySection = document.getElementById('gallerySection');
+
+let generatedImages = [];
+
+// Example chips
+document.querySelectorAll('.example-chip').forEach(chip => {
+  chip.addEventListener('click', () => { promptInput.value = chip.textContent; });
+});
+
+generateBtn.addEventListener('click', generateImage);
+
+async function generateImage() {
+  const prompt = promptInput.value.trim();
+  if (!prompt) { promptInput.focus(); return; }
+
+  const style = document.getElementById('styleSelect').value;
+  const size = document.getElementById('sizeSelect').value;
+  const [width, height] = size.split('x');
+  const fullPrompt = style ? `${prompt}, ${style}, high quality, detailed` : `${prompt}, high quality, detailed`;
+
+  generateBtn.disabled = true;
+  generateBtn.textContent = '⏳ Generating...';
+  resultArea.style.display = 'block';
+  loadingOverlay.style.display = 'flex';
+  resultImg.style.display = 'none';
+
+  // Using Pollinations.ai — free, no API key needed
+  const encodedPrompt = encodeURIComponent(fullPrompt);
+  const seed = Math.floor(Math.random() * 999999);
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=${width}&height=${height}&seed=${seed}&nologo=true`;
+
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+
+  img.onload = () => {
+    resultImg.src = imageUrl;
+    resultImg.style.display = 'block';
+    loadingOverlay.style.display = 'none';
+    generateBtn.disabled = false;
+    generateBtn.textContent = '🎨 Generate AI Image';
+
+    // Add to gallery
+    generatedImages.unshift(imageUrl);
+    if (generatedImages.length > 6) generatedImages.pop();
+    renderGallery();
+  };
+
+  img.onerror = () => {
+    loadingOverlay.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:0.88rem;">⚠️ Generation failed. Please try again with a different prompt.</div>';
+    generateBtn.disabled = false;
+    generateBtn.textContent = '🎨 Generate AI Image';
+  };
+
+  img.src = imageUrl;
+}
+
+downloadBtn.addEventListener('click', async () => {
+  const url = resultImg.src;
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'toolnest-ai-image.jpg';
+    a.click();
+  } catch {
+    window.open(url, '_blank');
+  }
+});
+
+newBtn.addEventListener('click', generateImage);
+
+function renderGallery() {
+  if (generatedImages.length === 0) return;
+  gallerySection.style.display = 'block';
+  galleryGrid.innerHTML = generatedImages.map(url =>
+    `<div class="gallery-item"><img src="${url}" alt="AI Generated" loading="lazy"></div>`
+  ).join('');
+}
+</script>
+</body>
+</html>

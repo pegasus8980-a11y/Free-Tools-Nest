@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest – Free Online Image, PDF & AI Tools | Convert, Resize, Enhance</title>
+<meta name="description" content="ToolNest offers 10+ free online tools: JPG to PNG, PNG to JPG, JPG to PDF, Image to PDF, PDF converter, Image Resizer, AI Photo Enhancer, AI Text to Image. Free, unlimited, no signup.">
+<meta name="keywords" content="jpg to png, png to jpg, jpg to pdf, image to pdf, pdf converter, image resizer, ai photo enhancer, text to image ai, image compress, free online tools, toolnest">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ToolNest – Free Image, PDF & AI Tools">
+<meta property="og:description" content="10+ free online tools. Convert, resize, enhance images. No signup, unlimited use.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://pegasus8980-a11y.github.io/Toolnest/">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #060608;
+  --surface: #0f0f14;
+  --card: #161620;
+  --card2: #1c1c28;
+  --accent: #7c6aff;
+  --accent2: #ff5f7e;
+  --accent3: #00e5a0;
+  --accent4: #ffb830;
+  --text: #f2f2ff;
+  --muted: #7878a0;
+  --border: rgba(124,106,255,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 10%, rgba(124,106,255,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 90%, rgba(255,95,126,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(0,229,160,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(6,6,8,0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 1.45rem;
+  color: var(--text); text-decoration: none;
+  display: flex; align-items: center; gap: 9px;
+}
+
+.logo-mark {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; box-shadow: 0 0 20px rgba(124,106,255,0.4);
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+
+/* HERO */
+.hero {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 80px 5% 60px;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(124,106,255,0.08);
+  border: 1px solid rgba(124,106,255,0.25);
+  color: var(--accent); font-size: 0.75rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 100px;
+  margin-bottom: 28px; letter-spacing: 0.06em; text-transform: uppercase;
+  animation: fadeUp 0.5s ease both;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.hero h1 .grad1 {
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero h1 .grad2 {
+  background: linear-gradient(90deg, var(--accent3), #00b4d8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero-sub {
+  color: var(--muted); font-size: 1.05rem; max-width: 520px;
+  margin: 0 auto 36px; line-height: 1.75;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.hero-pills {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  margin-bottom: 50px;
+  animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.pill {
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--muted); font-size: 0.78rem; padding: 5px 14px;
+  border-radius: 100px; transition: all 0.2s;
+}
+
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/* AD */
+.ad-wrap {
+  position: relative; z-index: 1;
+  margin: 0 5% 50px;
+  background: var(--surface);
+  border: 1px dashed rgba(124,106,255,0.15);
+  border-radius: 14px; padding: 16px; text-align: center;
+}
+.ad-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); opacity: 0.4; margin-bottom: 6px; }
+.ad-slot { min-height: 90px; display: flex; align-items: center; justify-content: center; }
+
+/* SECTIONS */
+.section { position: relative; z-index: 1; padding: 10px 5% 60px; }
+
+.section-header { margin-bottom: 28px; }
+.section-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent); font-weight: 600; margin-bottom: 6px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700;
+}
+.section-sub { color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
+
+/* TOOLS GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px; padding: 26px;
+  text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column; gap: 10px;
+  transition: all 0.25s; position: relative; overflow: hidden;
+  cursor: pointer;
+}
+
+.tool-card::after {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124,106,255,0.35);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(124,106,255,0.1);
+  background: var(--card2);
+}
+
+.tool-card:hover::after { opacity: 1; }
+
+.t-icon {
+  width: 48px; height: 48px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+
+.t-badge {
+  font-size: 0.65rem; font-weight: 700; padding: 2px 9px;
+  border-radius: 100px; text-transform: uppercase; letter-spacing: 0.06em;
+  width: fit-content;
+}
+
+.badge-hot { background: rgba(255,95,126,0.12); color: var(--accent2); }
+.badge-new { background: rgba(0,229,160,0.12); color: var(--accent3); }
+.badge-ai { background: rgba(124,106,255,0.12); color: var(--accent); }
+.badge-free { background: rgba(255,184,48,0.12); color: var(--accent4); }
+
+.t-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
+.t-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+.t-arrow { margin-top: auto; font-size: 0.8rem; color: var(--accent); font-weight: 500; }
+
+/* AI HIGHLIGHT CARD */
+.ai-card {
+  background: linear-gradient(135deg, rgba(124,106,255,0.12), rgba(255,95,126,0.08));
+  border-color: rgba(124,106,255,0.25) !important;
+}
+
+/* STATS */
+.stats {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 16px;
+  margin: 0 5% 60px; overflow: hidden;
+}
+
+.stat-item {
+  background: var(--surface);
+  padding: 28px 20px; text-align: center;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem; font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* WHY US */
+.why-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.why-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px; text-align: center;
+}
+
+.why-icon { font-size: 2rem; margin-bottom: 12px; }
+.why-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+.why-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* FAQ */
+.faq-wrap { max-width: 700px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q {
+  font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  gap: 12px;
+}
+.faq-q span { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
+.faq-a { font-size: 0.87rem; color: var(--muted); line-height: 1.75; margin-top: 10px; display: none; }
+
+/* FOOTER */
+footer {
+  position: relative; z-index: 1;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px 5% 30px;
+}
+
+.footer-top {
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 30px; margin-bottom: 30px;
+}
+
+.footer-logo { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; }
+.footer-logo span { color: var(--accent); }
+.footer-desc { font-size: 0.82rem; color: var(--muted); margin-top: 6px; max-width: 280px; line-height: 1.6; }
+
+.footer-col h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; }
+.footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: 0.82rem; margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border); padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+  font-size: 0.78rem; color: var(--muted);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { flex-direction: column; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ToolNest",
+  "url": "https://pegasus8980-a11y.github.io/Toolnest/",
+  "description": "Free online image, PDF and AI tools. Convert JPG to PNG, PNG to JPG, JPG to PDF, resize images, enhance photos with AI.",
+  "potentialAction": {"@type": "SearchAction", "target": "https://pegasus8980-a11y.github.io/Toolnest/?q={search_term_string}", "query-input": "required name=search_term_string"}
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-mark">🛠</div>
+    Tool<span>Nest</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#image-tools">Image Tools</a></li>
+    <li><a href="#pdf-tools">PDF Tools</a></li>
+    <li><a href="#ai-tools">AI Tools</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✨ 10+ Free Tools · No Signup · Unlimited Use</div>
+  <h1>
+    The <span class="grad1">Smartest</span> Free<br>
+    <span class="grad2">Image & PDF</span> Toolkit
+  </h1>
+  <p class="hero-sub">Convert, resize, compress, enhance — everything you need for images and PDFs, powered by AI. Free forever, no login needed.</p>
+  <div class="hero-pills">
+    <span class="pill">JPG to PNG</span>
+    <span class="pill">PNG to JPG</span>
+    <span class="pill">JPG to PDF</span>
+    <span class="pill">Image to PDF</span>
+    <span class="pill">PDF Converter</span>
+    <span class="pill">Image Resizer</span>
+    <span class="pill">AI Photo Enhancer</span>
+    <span class="pill">AI Text to Image</span>
+    <span class="pill">Image Compressor</span>
+    <span class="pill">PNG to PDF</span>
+  </div>
+</section>
+
+<!-- AD TOP -->
+<div class="ad-wrap">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Free Tools</div></div>
+  <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Unlimited Files</div></div>
+  <div class="stat-item"><div class="stat-num">0₹</div><div class="stat-label">Forever Free</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Private & Secure</div></div>
+</div>
+
+<!-- IMAGE TOOLS -->
+<section class="section" id="image-tools">
+  <div class="section-header">
+    <div class="section-label">🖼️ Image Tools</div>
+    <div class="section-title">Image Converter & Editor</div>
+    <div class="section-sub">Convert between formats, resize, compress — all in your browser</div>
+  </div>
+  <div class="grid">
+
+    <a class="tool-card" href="jpg-to-png.html">
+      <div class="t-icon" style="background:rgba(124,106,255,0.15)">🖼️</div>
+      <span class="t-badge badge-hot">Most Popular</span>
+      <div class="t-name">JPG to PNG</div>
+      <div class="t-desc">Convert JPG/JPEG to PNG format. Supports transparency. Batch convert multiple files.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="png-to-jpg.html">
+      <div class="t-icon" style="background:rgba(255,95,126,0.15)">🔄</div>
+      <span class="t-badge badge-free">Free</span>
+      <div class="t-name">PNG to JPG</div>
+      <div class="t-desc">Convert PNG images to JPG with quality control. Reduce file size for web and sharing.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="image-resizer.html">
+      <div class="t-icon" style="background:rgba(255,184,48,0.15)">📐</div>
+      <span class="t-badge badge-hot">Popular</span>
+      <div class="t-name">Image Resizer</div>
+      <div class="t-desc">Resize images to exact pixels or percentage. Lock aspect ratio. Supports JPG, PNG, WebP.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="image-compressor.html">
+      <div class="t-icon" style="background:rgba(0,229,160,0.15)">🗜️</div>
+      <span class="t-badge badge-free">Free</span>
+      <div class="t-name">Image Compressor</div>
+      <div class="t-desc">Compress images without visible quality loss. Reduce file size up to 90% for web use.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="png-to-pdf.html">
+      <div class="t-icon" style="background:rgba(0,180,216,0.15)">📋</div>
+      <span class="t-badge badge-new">New</span>
+      <div class="t-name">PNG to PDF</div>
+      <div class="t-desc">Convert PNG images to PDF format. Merge multiple PNGs into one PDF document instantly.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- AD MID -->
+<div class="ad-wrap" style="margin-bottom:40px;">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- PDF TOOLS -->
+<section class="section" id="pdf-tools">
+  <div class="section-header">
+    <div class="section-label">📄 PDF Tools</div>
+    <div class="section-title">PDF Converter & Tools</div>
+    <div class="section-sub">Convert images to PDF, merge files — fast and free</div>
+  </div>
+  <div class="grid">
+
+    <a class="tool-card" href="jpg-to-pdf.html">
+      <div class="t-icon" style="background:rgba(0,229,160,0.15)">📄</div>
+      <span class="t-badge badge-hot">Most Used</span>
+      <div class="t-name">JPG to PDF</div>
+      <div class="t-desc">Convert one or multiple JPG images into a single PDF. Choose A4, Letter, or custom page size.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="image-to-pdf.html">
+      <div class="t-icon" style="background:rgba(255,184,48,0.15)">🗂️</div>
+      <span class="t-badge badge-new">New</span>
+      <div class="t-name">Image to PDF</div>
+      <div class="t-desc">Convert any image format (JPG, PNG, WebP) to PDF. Drag, drop, merge and download.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card" href="pdf-converter.html">
+      <div class="t-icon" style="background:rgba(124,106,255,0.15)">⚡</div>
+      <span class="t-badge badge-new">New</span>
+      <div class="t-name">PDF Converter</div>
+      <div class="t-desc">All-in-one PDF tool. Convert PDF pages to images, merge PDFs, and more.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section class="section" id="ai-tools">
+  <div class="section-header">
+    <div class="section-label">🤖 AI Tools</div>
+    <div class="section-title">AI-Powered Image Tools</div>
+    <div class="section-sub">Advanced AI tools to enhance and generate images for free</div>
+  </div>
+  <div class="grid">
+
+    <a class="tool-card ai-card" href="ai-photo-enhancer.html">
+      <div class="t-icon" style="background:rgba(124,106,255,0.2)">✨</div>
+      <span class="t-badge badge-ai">AI Powered</span>
+      <div class="t-name">AI Photo Enhancer</div>
+      <div class="t-desc">Enhance photo quality automatically. Fix blurry images, improve brightness, sharpness, and colors using AI filters.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card ai-card" href="ai-text-to-image.html">
+      <div class="t-icon" style="background:rgba(255,95,126,0.2)">🎨</div>
+      <span class="t-badge badge-ai">AI Powered</span>
+      <div class="t-name">AI Text to Image</div>
+      <div class="t-desc">Type any description and generate stunning AI images instantly. Create art, logos, backgrounds for free.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+    <a class="tool-card ai-card" href="ai-bg-remover.html">
+      <div class="t-icon" style="background:rgba(0,229,160,0.2)">🪄</div>
+      <span class="t-badge badge-new">New</span>
+      <div class="t-name">Background Remover</div>
+      <div class="t-desc">Remove image background automatically in one click. Perfect for product photos, profile pictures.</div>
+      <div class="t-arrow">Use Free Tool →</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- AD BOTTOM -->
+<div class="ad-wrap" style="margin-bottom:40px;">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">💡 Why ToolNest</div>
+    <div class="section-title">The Best Free Tool Website</div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">⚡</div><div class="why-title">Lightning Fast</div><div class="why-text">All tools work in your browser. No server upload wait. Results in seconds.</div></div>
+    <div class="why-card"><div class="why-icon">🔒</div><div class="why-title">100% Private</div><div class="why-text">Your files never leave your device. Zero data collection.</div></div>
+    <div class="why-card"><div class="why-icon">♾️</div><div class="why-title">Unlimited Files</div><div class="why-text">No daily limits, no file count cap. Convert as many as you want.</div></div>
+    <div class="why-card"><div class="why-icon">📱</div><div class="why-title">Works on Phone</div><div class="why-text">Fully mobile optimized. Use on any phone, tablet, or computer.</div></div>
+    <div class="why-card"><div class="why-icon">🎯</div><div class="why-title">No Signup</div><div class="why-text">Open, upload, download. No account, no email, no password.</div></div>
+    <div class="why-card"><div class="why-icon">💰</div><div class="why-title">Always Free</div><div class="why-text">All tools free forever. We run ads to keep the service running.</div></div>
+  </div>
+</section>
+
+<!-- FAQ SEO -->
+<section class="section" id="faq">
+  <div class="section-header">
+    <div class="section-label">❓ FAQ</div>
+    <div class="section-title">Frequently Asked Questions</div>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item"><div class="faq-q">Is ToolNest completely free to use? <span>+</span></div><div class="faq-a">Yes! All tools on ToolNest are 100% free with no hidden charges, no premium plans, and no daily file limits. Use them unlimited times.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I convert JPG to PDF for free? <span>+</span></div><div class="faq-a">Click on "JPG to PDF" tool, upload your JPG images, select page size, and click Generate PDF. Your PDF downloads instantly — no signup needed.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I convert multiple images to one PDF? <span>+</span></div><div class="faq-a">Yes! Our Image to PDF and JPG to PDF tools support multiple files. Upload all your images and they will be merged into a single PDF document.</div></div>
+    <div class="faq-item"><div class="faq-q">How does AI Photo Enhancer work? <span>+</span></div><div class="faq-a">Our AI Photo Enhancer uses advanced filters and algorithms to automatically improve brightness, contrast, sharpness, and colors of your photos instantly.</div></div>
+    <div class="faq-item"><div class="faq-q">Are my files safe and private? <span>+</span></div><div class="faq-a">Absolutely. All processing happens in your browser using JavaScript. Your files are never uploaded to any server. Your data stays 100% on your device.</div></div>
+    <div class="faq-item"><div class="faq-q">What image formats does ToolNest support? <span>+</span></div><div class="faq-a">We support JPG, JPEG, PNG, WebP, and PDF formats. You can convert between all these formats freely.</div></div>
+    <div class="faq-item"><div class="faq-q">Does ToolNest work on mobile phones? <span>+</span></div><div class="faq-a">Yes! ToolNest is fully optimized for mobile phones. All tools work perfectly on Android and iPhone browsers.</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Tool<span>Nest</span></div>
+      <div class="footer-desc">Free online image, PDF and AI tools. Fast, unlimited, no signup required.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Image Tools</h4>
+      <a href="jpg-to-png.html">JPG to PNG</a>
+      <a href="png-to-jpg.html">PNG to JPG</a>
+      <a href="image-resizer.html">Image Resizer</a>
+      <a href="image-compressor.html">Image Compressor</a>
+      <a href="png-to-pdf.html">PNG to PDF</a>
+    </div>
+    <div class="footer-col">
+      <h4>PDF Tools</h4>
+      <a href="jpg-to-pdf.html">JPG to PDF</a>
+      <a href="image-to-pdf.html">Image to PDF</a>
+      <a href="pdf-converter.html">PDF Converter</a>
+    </div>
+    <div class="footer-col">
+      <h4>AI Tools</h4>
+      <a href="ai-photo-enhancer.html">AI Photo Enhancer</a>
+      <a href="ai-text-to-image.html">AI Text to Image</a>
+      <a href="ai-bg-remover.html">Background Remover</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ToolNest. All rights reserved.</span>
+    <span>Free Image & PDF Tools Online</span>
+  </div>
+</footer>
+
+<script>
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const a = q.nextElementSibling;
+    const open = a.style.display === 'block';
+    a.style.display = open ? 'none' : 'block';
+    q.querySelector('span').textContent = open ? '+' : '−';
+  });
+});
+</script>
+</body>
+</html>
